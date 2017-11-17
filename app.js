@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+
 /**
  * app.js
  *
@@ -37,6 +40,13 @@ try {
   console.error('but if it doesn\'t, the app will run with the global sails instead!');
   return;
 }
+
+/* BIG TONY STYLE:
+var url = 'Meadowhill:101816Node!@ds111876.mlab.com:11876/palvelin-kurssi';
+var promise = mongoose.connect(url, function(err) {
+  if(err) throw err;
+  console.log("Connected");
+}); */
 
 // --•
 // Try to get `rc` dependency (for loading `.sailsrc` files).

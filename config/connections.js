@@ -1,3 +1,4 @@
+require('dotenv').config();
 /**
  * Connections
  * (sails.config.connections)
@@ -28,9 +29,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
+  /* localDiskDb: {
     adapter: 'sails-disk'
-  },
+  }, */
 
   /***************************************************************************
   *                                                                          *
@@ -49,13 +50,8 @@ module.exports.connections = {
      //password: 'password', //optional
   //   database: 'your_mongo_db_name_here' //optional
   // },
-   mongodb: {
+  mongodb: {
     adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
-    database: 'articlebase',
-    //user: 'username', //optional
-    //password: 'password', //optional
- //   database: 'your_mongo_db_name_here' //optional
+    url: process.env.MONGOLAB_URI
   }
 };
