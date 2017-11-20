@@ -50,7 +50,7 @@ module.exports = {
             res.view('edit', {article:article});
         });
     },
-    update: function(req, res){
+    updatebook: function(req, res){
         var title = req.body.title;
         var body = req.body.body;
 

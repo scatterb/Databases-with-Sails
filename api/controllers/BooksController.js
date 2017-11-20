@@ -46,12 +46,12 @@ module.exports = {
                 res.send(500, {error: 'Database Error'});
             }
 
-            res.view('edit', {book:book});
+            res.view('editbook', {book:book});
         });
     },
     update: function(req, res){
         var title = req.body.title;
-        var synopsis = req.synopsis.synopsis;
+        var synopsis = req.body.synopsis;
 
         Books.update({id: req.params.id},{title:title, synopsis:synopsis}).exec(function(err){
             if(err){
