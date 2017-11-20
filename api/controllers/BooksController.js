@@ -14,14 +14,14 @@ module.exports = {
             res.view('listbook', {books:books});
         });
     },
-    add: function(req, res){
-        res.view('add');
+    addbook: function(req, res){
+        res.view('addbook');
     },
     create:function(req, res){
         var title = req.body.title;
-        var body = req.body.synopsis;
+        var synopsis = req.body.synopsis;
 
-        Books.create({title:title, body:synopsis}).exec(function(err){
+        Books.create({title:title, synopsis:synopsis}).exec(function(err){
             if(err) {
                 res.send(500, {error: 'Database Error'});
             }
@@ -40,8 +40,8 @@ module.exports = {
 
         return false;
     },
-    edit: function(req, res){
-        Books.findOne({id:req.params.id}).exec(function(err, article){
+    editbook: function(req, res){
+        Books.findOne({id:req.params.id}).exec(function(err, book){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
@@ -51,9 +51,9 @@ module.exports = {
     },
     update: function(req, res){
         var title = req.body.title;
-        var synopsis = req.body.synopsis;
+        var synopsis = req.synopsis.synopsis;
 
-        Books.update({id: req.params.id},{title:title, body:synopsis}).exec(function(err){
+        Books.update({id: req.params.id},{title:title, synopsis:synopsis}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
