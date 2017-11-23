@@ -22,7 +22,7 @@
     "include-all": "^1.0.0",
     "process-env": "^1.1.0",
     "rc": "1.0.1",
-    "sails": "~0.12.14",
+    "sails": "^0.12.14",
     "sails-disk": "~0.10.9",
     "sails-mongo": "^0.12.2",
     "waterline": "^0.13.1-8"
