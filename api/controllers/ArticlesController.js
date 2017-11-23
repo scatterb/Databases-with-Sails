@@ -18,7 +18,10 @@ module.exports = {
     add: function(req, res){
         res.view('add');
     },
-    create:function(req, res){
+    testi: function(req, res){
+        res.view('testi');
+    },
+    create: function(req, res){
         var title = req.body.title;
         var body = req.body.body;
 
@@ -50,7 +53,24 @@ module.exports = {
             res.view('edit', {article:article});
         });
     },
+    
+    
     updatebook: function(req, res){
+        var title = req.body.title;
+        var body = req.body.body;
+
+        Articles.update({id: req.params.id},{title:title, body:body}).exec(function(err){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+
+            res.redirect('/articles/list');
+        });
+
+        return false;
+    }
+    ,
+    update: function(req, res){
         var title = req.body.title;
         var body = req.body.body;
 
