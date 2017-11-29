@@ -32,10 +32,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage',
-    'post /User': 'UserController.create'
-  },
+    '/': {
+      view: 'homepage',
+      'post /User': 'UserController.create'
+    },
+    
 
   /***************************************************************************
   *                                                                          *
@@ -47,4 +48,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   //'post /User': 'UserController.create'
+
 };
+
+

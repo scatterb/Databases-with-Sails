@@ -1,1 +1,14 @@
-testi
+
+<tbody>
+    <% articles.forEach(function(article) { %>
+        <% if (article.title === 'EN OLE KINGIN KIRJA') { %> 
+        <tr>
+            <h1><%= article.title %></h1>
+            <p><%= article.body %></p>
+            <td>
+
+        </tr>
+        <%
+        }
+    }) %>
+</tbody>

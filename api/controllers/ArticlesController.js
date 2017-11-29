@@ -19,7 +19,14 @@ module.exports = {
         res.view('add');
     },
     testi: function(req, res){
-        res.view('testi');
+        //res.view('testi');
+        Articles.find({}).exec(function(err, articles) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('testi', {articles:articles});
+
+        });
     },
     create: function(req, res){
         var title = req.body.title;
