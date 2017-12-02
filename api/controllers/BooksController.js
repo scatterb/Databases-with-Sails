@@ -17,6 +17,16 @@ module.exports = {
     addbook: function(req, res){
         res.view('addbook');
     },
+    booktest: function(req, res){
+        //res.view('testi');
+        Books.find({}).exec(function(err, books) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('booktest', {books:books});
+
+        });
+    },
     create:function(req, res){
         var title = req.body.title;
         var synopsis = req.body.synopsis;

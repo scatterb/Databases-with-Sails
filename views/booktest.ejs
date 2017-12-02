@@ -1,0 +1,14 @@
+
+<tbody>
+    <% books.forEach(function(book) { %>
+        <% if (book.title.indexOf("Hohto") >= 0) { %> 
+        <tr>
+            <h1><%= book.title %></h1>
+            <p><%= book.synopsis %></p>
+            <td>
+
+        </tr>
+        <%
+        }
+    }) %>
+</tbody>
