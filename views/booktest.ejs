@@ -1,14 +1,12 @@
-
-<tbody>
-    <% books.forEach(function(book) { %>
-        <% if (book.title.indexOf("Hohto") >= 0) { %> 
-        <tr>
-            <h1><%= book.title %></h1>
-            <p><%= book.synopsis %></p>
-            <td>
-
-        </tr>
-        <%
-        }
-    }) %>
-</tbody>
+<body>
+<% books.forEach(function(book) { %>
+    <% if (book.title.indexOf("Aamunkoitto")  >= 0) { %> 
+        <div>
+        <%- book.title %>
+        <br>
+        <%- book.synopsis %>
+        </div>
+    <%
+    }
+}) %>
+</body>
