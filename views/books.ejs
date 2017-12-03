@@ -1,6 +1,12 @@
 <h1 class="display-4">Kirjat</h1>
 <table class="table table-striped">
     <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Julkaisuvuosi</th>
+        </tr>
+    </thead>
+    <tbody>
         <% books.forEach(function(book){ %>
             <tr>
                 <td><a href="/books/editbook/<%- book.id %>"<%- book.title %></a></td>
