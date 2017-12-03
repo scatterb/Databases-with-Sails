@@ -18,6 +18,18 @@ module.exports = {
     add: function(req, res){
         res.view('add');
     },
+    // Delete this later. Maybe
+    /*
+    testi: function(req, res){
+        //res.view('testi');
+        Articles.find({}).exec(function(err, articles) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('testi', {articles:articles});
+
+        });
+    }, */
     testi: function(req, res){
         //res.view('testi');
         Articles.find({}).exec(function(err, articles) {
@@ -61,7 +73,7 @@ module.exports = {
         });
     },
     
-    
+    /* THESE ARE PROBABLY UNNECESSARY, DELETE!
     updatebook: function(req, res){
         var title = req.body.title;
         var body = req.body.body;
@@ -91,5 +103,16 @@ module.exports = {
 
         return false;
     }
+    */
+
+    articleview: function(req, res){
+        Articles.findOne({id:req.params.id}).exec(function(err, article){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+
+            res.view('articleview', {article:article});
+        });
+    },
 };
 

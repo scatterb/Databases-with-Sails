@@ -1,7 +1,22 @@
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/books/listbook">Books</a></li>
-    <li class="breadcrumb-item active">Edit</li>
+    <li class="breadcrumb-item"><a href="/books/books">Kirjat</a></li>
+    <li class="breadcrumb-item active"><%- book.title %></li>
 </ol>
+
+<%- book.title %>
+<%- book.synopsis %>
+<br>
+<br>
+<% var images = book.images %>
+<% var imageArray = images.split(",") %>
+<% imageArray.forEach(function(image){ %>
+    <img src="<%= image %>">
+<% }) %>
+
+
+
+<!-- TODO! Include this when admin user logged in:
+
 <h1 class="display-4">Edit Book</h1>
 <form method="post" action="/books/update/<%= book.id %>">
     <div class="form-group">
@@ -14,3 +29,4 @@
     </div>
     <input type="submit" value="Submit" class="btn btn-primary">
 </form>
+-->

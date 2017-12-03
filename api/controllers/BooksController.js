@@ -11,7 +11,15 @@ module.exports = {
             if(err) {
                 res.send(500, {error: "Database Error"});
             }
-            res.view('listbook', {books:books});
+            res.view('listbook',  {books:books});
+        });
+    },
+    books:function(req, res){
+        Books.find({}).exec(function(err, books) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('books',  {books:books});
         });
     },
     addbook: function(req, res){
