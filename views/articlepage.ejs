@@ -1,0 +1,26 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/articles/list">Artikkelit ym.</a></li>
+    <li class="breadcrumb-item active"><%- article.title %></li>
+</ol>
+
+<%- article.title %>
+<br>
+<%- article.body %>
+<br>
+
+
+
+<!-- TODO! Include this when admin user logged in:
+
+<h1 class="display-4">Muokkaa artikkelia</h1>
+<form method="post" action="/article/update/<%= article.id %>">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" class="form-control" value="<%= article.title %>">
+    </div>
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea name="body" class="form-control"><%= article.body %></textarea>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

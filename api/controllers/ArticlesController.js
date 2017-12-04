@@ -43,7 +43,18 @@ module.exports = {
 
         return false;
     },
-    
+
+    // This was formerly edit & still also does work as an edit page if admin user (TODO)
+    articlepage: function(req, res){
+        Articles.findOne({id:req.params.id}).exec(function(err, article){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+
+            res.view('articlepage', {article:article});
+        });
+    },
+    /*
     edit: function(req, res){
         Articles.findOne({id:req.params.id}).exec(function(err, article){
             if(err){
@@ -53,6 +64,7 @@ module.exports = {
             res.view('edit', {article:article});
         });
     },
+    */
     
     update: function(req, res){
         var title = req.body.title;
