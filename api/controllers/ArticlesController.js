@@ -15,6 +15,15 @@ module.exports = {
         });
     },
 
+    articles:function(req, res){
+        Articles.find({}).exec(function(err, articles) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('articles',  {articles:articles});
+        });
+    },
+
     add: function(req, res){
         res.view('add');
     },

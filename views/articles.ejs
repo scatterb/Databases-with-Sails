@@ -1,0 +1,15 @@
+<h1 class="display-4">Artikkelit ym.</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sivu</th>
+        </tr>
+    </thead>
+    <tbody>
+            <% articles.forEach(function(article){ %>
+                <tr>
+                    <td><a href="/articles/articlepage/<%- article.id %>"<%- article.title %></a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+</table>
