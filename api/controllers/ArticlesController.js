@@ -6,14 +6,6 @@
  */
 
 module.exports = {
-    list:function(req, res){
-        Articles.find({}).exec(function(err, articles) {
-            if(err) {
-                res.send(500, {error: "Database Error"});
-            }
-            res.view('list', {articles:articles});
-        });
-    },
 
     articles:function(req, res){
         Articles.find({}).exec(function(err, articles) {
@@ -22,35 +14,6 @@ module.exports = {
             }
             res.view('articles',  {articles:articles});
         });
-    },
-
-    add: function(req, res){
-        res.view('add');
-    },
-
-    create: function(req, res){
-        var title = req.body.title;
-        var body = req.body.body;
-
-        Articles.create({title:title, body:body}).exec(function(err){
-            if(err) {
-                res.send(500, {error: 'Database Error'});
-            }
-
-            res.redirect('/articles/list');
-        });
-    },
-    
-    delete: function(req, res){
-        Articles.destroy({id:req.params.id}).exec(function(err){
-            if(err){
-                res.send(500, {error: 'Database Error'});
-            }
-
-            res.redirect('/articles/list');
-        });
-
-        return false;
     },
 
     // This was formerly edit & still also does work as an edit page if admin user (TODO)
@@ -63,7 +26,44 @@ module.exports = {
             res.view('articlepage', {article:article});
         });
     },
-    /*
+
+    //////// TODO! All these functions below just for admin user \\\\\\\\\\\
+    
+    list:function(req, res){
+        Articles.find({}).exec(function(err, articles) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('list', {articles:articles});
+        });
+    },
+
+    add: function(req, res){
+        res.view('add');
+    },
+
+    create: function(req, res){
+        var title = req.body.title;
+        var body = req.body.body;
+        Articles.create({title:title, body:body}).exec(function(err){
+            if(err) {
+                res.send(500, {error: 'Database Error'});
+            }
+            res.redirect('/articles/list');
+        });
+    },
+    
+    delete: function(req, res){
+        Articles.destroy({id:req.params.id}).exec(function(err){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+            res.redirect('/articles/list');
+        });
+
+        return false;
+    },
+  
     edit: function(req, res){
         Articles.findOne({id:req.params.id}).exec(function(err, article){
             if(err){
@@ -73,7 +73,6 @@ module.exports = {
             res.view('edit', {article:article});
         });
     },
-    */
     
     update: function(req, res){
         var title = req.body.title;
@@ -83,7 +82,6 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-
             res.redirect('/articles/list');
         });
 
