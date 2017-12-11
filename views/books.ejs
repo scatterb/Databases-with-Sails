@@ -9,7 +9,7 @@
     <tbody>
         <% books.forEach(function(book){ %>
             <tr>
-                <td><a href="/books/bookPage/<%- book.id %>"<%- book.title %></a></td>
+                <td><a href="/books/bookpage/<%- book.id %>"<%- book.title %></a></td>
                 <!-- TODO! Include this when admin user logged in:
                 <td>
                     <form class="d-inline" action="/books/delete/<%- book.id %>" method="post">

@@ -13,7 +13,10 @@ module.exports = {
     },
     body:{
       type: 'string'
-    }
+    },
+    category:{
+    type:   'string'
+    },
 
 
   },
