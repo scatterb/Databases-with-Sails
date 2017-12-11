@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%=typeof title == 'undefined' ? 'Piina.Net' : title%></title>
+
+<head>
+    <title>
+        <%=typeof title == 'undefined' ? 'Piina.Net' : title%>
+    </title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,44 +22,45 @@
     <!--STYLES END-->
     <!--JQUERY-->
     <script src="/js/jquery.min.js"></script>
-  </head>
+</head>
 
-  <body>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="/">Piina</a>
-              </div>
-            <ul class="nav navbar-nav">
-              <li class="active"></li>
-              <li class="dropdown"> 
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Piina</a>
+        </div>
+        <a class="navbar-brand" href="/login">Login</a>
+        <ul class="nav navbar-nav">
+            <li class="active"></li>
+            <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stephen King</a>
                 <ul class="dropdown-menu">
                     <li><a href="/articles/articlepage/5a25209f0973a693cc932cd7">Biografia</a></li>
                     <li><a href="/articles/articlepage/5a258bd8ae6d963bdbb93423">Richard Bachman</a></li>
                     <li><a href="http://stephenking.com/" target="Official Website">StephenKing.com</a></li>
                 </ul>
-              </li>
-              <li class="dropdown"> 
+            </li>
+            <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kirjat</a>
                 <ul class="dropdown-menu">
                     <li><a href="/books/books">Bibliografia</a></li>
                     <li><a href="#">Sarjakuvat</a></li>
                 </ul>
-              </li>
-              <li class="dropdown"> 
+            </li>
+            <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Filmografia</a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Elokuvat</a></li>
                     <li><a href="#">TV-Sarjat</a></li>
                     <li><a href="#">Cameoroolit</a></li>
                 </ul>
-              </li>
-            </ul>
-        </nav>
+            </li>
+        </ul>
+    </nav>
 
-        <div class="container">
-          <%- body %>
-        </div>
+    <div class="container">
+        <%- body %>
+    </div>
 
     <!--
         Client-side Templates
@@ -64,7 +68,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
@@ -82,5 +86,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.8/umd/popper.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-  </body>
+</body>
+
 </html>
