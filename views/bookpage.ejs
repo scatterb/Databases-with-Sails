@@ -6,14 +6,16 @@
 <%- book.synopsis %>
 <br>
 <br>
-<% if (imageArray > 0) { %>
-    <h4>Kansikuvat</h4>
+
     <% var images = book.images %>
-    <% var imageArray = images.split(",") %>
-    <% imageArray.forEach(function(image){ %>
-        <img src="<%= image %>">
-    <% }) %>
-<% } %>
+    <% if (book.category != "Comic") { %>
+        <h4>Kansikuvat</h4>
+        <% var imageArray = images.split(",") %>
+        <% imageArray.forEach(function(image){ %>
+            <img src="<%= image %>">
+        <% }) %>
+    <% } %>
+
 
 
 <!-- TODO! Include this when admin user logged in:
