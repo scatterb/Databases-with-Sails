@@ -36,11 +36,7 @@ module.exports.routes = {
         view: 'homepage',
         'post /User': 'UserController.create'
     },
-
-    '/login': {
-        view: 'login'
-    },
-
+    'get /login': 'LoginController.login',
 
     /***************************************************************************
      *                                                                          *
