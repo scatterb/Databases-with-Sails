@@ -7,9 +7,13 @@
 
 module.exports = {
 
-  attributes: {
-
-  },
-  //connection: 'someMongodbServer',
+    attributes: {
+        Tunnus: {
+            type: 'string'
+        },
+        Salasana: {
+            type: 'string'
+        }
+    },
+    connection: 'mongodb',
 };
-
