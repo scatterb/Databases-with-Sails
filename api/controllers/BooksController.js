@@ -24,6 +24,15 @@ module.exports = {
         });
     },
 
+    comics:function(req, res){
+        Books.find({}).exec(function(err, comics) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('comics',  {books:comics});
+        });
+    },
+
     addbook: function(req, res){
         res.view('addbook');
     },

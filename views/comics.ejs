@@ -1,4 +1,4 @@
-<h1 class="display-4">Kirjat</h1>
+<h1 class="display-4">Sarjakuvat</h1>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -8,7 +8,7 @@
     </thead>
     <tbody>
         <% books.forEach(function(book) { %>
-            <% if (book.category != "Comic") { %>
+            <% if (book.category == "Comic") { %>
                 <tr>
                     <td><a href="/books/bookpage/<%- book.id %>"<%- book.title %></a></td>
                     <!-- TODO! Include this when admin user logged in:
