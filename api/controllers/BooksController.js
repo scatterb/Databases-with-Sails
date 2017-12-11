@@ -31,8 +31,9 @@ module.exports = {
     create:function(req, res){
         var title = req.body.title;
         var synopsis = req.body.synopsis;
+        var category = req.body.category;
 
-        Books.create({title:title, synopsis:synopsis}).exec(function(err){
+        Books.create({title:title, synopsis:synopsis, category:category}).exec(function(err){
             if(err) {
                 res.send(500, {error: 'Database Error'});
             }
@@ -66,8 +67,9 @@ module.exports = {
     update: function(req, res){
         var title = req.body.title;
         var synopsis = req.body.synopsis;
+        var category = req.body.category;
 
-        Books.update({id: req.params.id},{title:title, synopsis:synopsis}).exec(function(err){
+        Books.update({id: req.params.id},{title:title, synopsis:synopsis, category:category}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }

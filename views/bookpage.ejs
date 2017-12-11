@@ -6,13 +6,14 @@
 <%- book.synopsis %>
 <br>
 <br>
-<h4>Kansikuvat</h4>
-<% var images = book.images %>
-<% var imageArray = images.split(",") %>
-<% imageArray.forEach(function(image){ %>
-    <img src="<%= image %>">
-<% }) %>
-
+<% if (imageArray > 0) { %>
+    <h4>Kansikuvat</h4>
+    <% var images = book.images %>
+    <% var imageArray = images.split(",") %>
+    <% imageArray.forEach(function(image){ %>
+        <img src="<%= image %>">
+    <% }) %>
+<% } %>
 
 
 <!-- TODO! Include this when admin user logged in:
@@ -27,5 +28,10 @@
         <label for="synopsis">Synopsis</label>
         <textarea name="synopsis" class="form-control"><%= book.synopsis %></textarea>
     </div>
+    <div class="form-group">
+            <label for="category">Category</label>
+            <input type="radio" name="category" value="Book" checked> Book<br>
+            <input type="radio" name="category" value="Comic"> Comic<br>
+        </div>
     <input type="submit" value="Submit" class="btn btn-primary">
 </form>

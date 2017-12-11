@@ -13,7 +13,10 @@ module.exports = {
     },
     synopsis:{
       type: 'string'
-    }
+    },
+    category:{
+      type:   'string'
+    },
 
 
   },
