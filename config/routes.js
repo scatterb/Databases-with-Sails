@@ -37,6 +37,8 @@ module.exports.routes = {
         'post /User': 'UserController.create'
     },
     'get /login': 'LoginController.login',
+    'post /login': 'LoginController.CheckDbWithUsername',
+
 
     /***************************************************************************
      *                                                                          *
