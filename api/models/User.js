@@ -8,12 +8,13 @@
 module.exports = {
 
     attributes: {
-        Tunnus: {
+        Username: {
             type: 'string'
         },
-        Salasana: {
+        Password: {
             type: 'string'
         }
     },
     connection: 'mongodb',
 };
+exports = User;
