@@ -5,11 +5,17 @@
     padding-top: 50px
 }
 #login .form-wrap {
-    width: 30%;
+    width: 40%;
     margin: 0 auto;
 }
+@media only screen and (max-width: 900px) {
+  #login .form-wrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 #login h1 {
-    color: #1fa67b;
+    color: #337ab7;
     font-size: 18px;
     text-align: center;
     font-weight: bold;
@@ -29,7 +35,7 @@
 }
 #login .checkbox.show:before {
     content: '\e013';
-    color: #1fa67b;
+    color: #337ab7;
     font-size: 17px;
     margin: 1px 0 0 3px;
     position: absolute;
@@ -63,7 +69,7 @@
 }
 .btn-custom {
     color: #fff;
-	background-color: #1fa67b;
+	background-color: #337ab7;
 }
 .btn-custom:hover,
 .btn-custom:focus {
