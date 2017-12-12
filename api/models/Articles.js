@@ -15,7 +15,7 @@ module.exports = {
       type: 'string'
     },
     category:{
-    type:   'string'
+      type:   'string'
     },
 
 
