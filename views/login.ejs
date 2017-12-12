@@ -2,32 +2,43 @@
 <html>
 
 <body>
-    <div class="form">
-        <div class="tab-content">
+<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <h1>Admin login</h1>
+                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Username</label>
+                            <input type="username" name="username" id="username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Password</label>
+                            <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="label">Show password</span>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                    </form>
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
 
-            <div id="login">
-                <h1>Kirjaudu sisään</h1>
-
-                <form action="/" method="post">
-
-                    <div class="field-wrap">
-                        <label>
-            Tunnus<span class="req">*</span>
-          </label>
-                        <input type="text" required autocomplete="off" />
-                    </div>
-
-                    <div class="field-wrap">
-                        <label>
-            Salasana<span class="req">*</span>
-          </label>
-                        <input type="password" required autocomplete="off" />
-                    </div>
-                    <button class="button button-block" />Kirjaudu</button>
-                </form>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Piina © - 2017</p>
             </div>
         </div>
     </div>
+</footer>
 </body>
 
 </html>
