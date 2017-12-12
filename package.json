@@ -21,6 +21,7 @@
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
     "jquery": "^3.2.1",
+    "moviedb": "^0.2.10",
     "process-env": "^1.1.0",
     "rc": "1.0.1",
     "sails": "^0.12.14",
