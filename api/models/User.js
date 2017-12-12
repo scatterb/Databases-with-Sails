@@ -7,9 +7,14 @@
 
 module.exports = {
 
-  attributes: {
-
-  },
-  //connection: 'someMongodbServer',
+    attributes: {
+        Username: {
+            type: 'string'
+        },
+        Password: {
+            type: 'string'
+        }
+    },
+    connection: 'mongodb',
 };
-
+exports = User;

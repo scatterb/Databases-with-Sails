@@ -36,6 +36,8 @@ module.exports.routes = {
         view: 'homepage',
         'post /User': 'UserController.create'
     },
+    'get /login': 'LoginController.login',
+    'post /login': 'LoginController.CheckDbWithUsername',
 
 
     /***************************************************************************
