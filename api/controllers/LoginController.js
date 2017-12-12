@@ -15,7 +15,7 @@ module.exports = {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
-            res.view('/', { user: user });
+            res.view('homepage', { user: user });
         });
     }
 }
