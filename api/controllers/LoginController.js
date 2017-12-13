@@ -22,9 +22,14 @@ module.exports = {
                 res.writeHead(400, { 'Content-Type': 'application/text' });
                 res.end('Login Fail');
             }
-            console.log(user);
+            req.session.me = user;
             res.view('homepage', { user: user });
+
         });
+    },
+    logOut: function(req, res) {
+        req.session.me = null;
+        return res.redirect('/');
     }
 }
 

@@ -30,7 +30,12 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Piina</a>
         </div>
-        <a class="navbar-brand" href="/login">Login</a>
+
+        <% if (req.session.me) { %>
+            <a class="navbar-brand" href="/logout">Logout</a>
+            <% } else { %>
+                <a class="navbar-brand" href="/login">Login</a>
+                <% } %>
         <ul class="nav navbar-nav">
             <li class="active"></li>
             <li class="dropdown">
@@ -57,6 +62,7 @@
                 </ul>
             </li>
         </ul>
+
     </nav>
 
     <div class="container">
