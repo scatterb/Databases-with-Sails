@@ -77,25 +77,12 @@ module.exports = {
         return false;
     },
 
-    edit: function(req, res) {
-        if (req.session.me) {
-            Articles.findOne({ id: req.params.id }).exec(function(err, article) {
-                if (err) {
-                    res.send(500, { error: 'Database Error' });
-                }
-                res.view('edit', { article: article });
-            });
-        } else {
-            res.redirect('/');
-        }
-    },
-
     update: function(req, res) {
         var title = req.body.title;
         var body = req.body.body;
         var category = req.body.category;
         if (req.session.me) {
-            Articles.update({ id: req.params.id }, { title: title, body: body, body: category }).exec(function(err) {
+            Articles.update({ id: req.params.id }, { title: title, body: body, category: category }).exec(function(err) {
                 if (err) {
                     res.send(500, { error: 'Database Error' });
                 }
