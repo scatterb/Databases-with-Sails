@@ -10,7 +10,12 @@ module.exports = {
         res.view('login');
     },
 
-    CheckDbWithUsername: function(req, res) {
+    GetUser: function(req, res) {
+        var username = req.body.username;
+        var password = req.body.password;
+
+        console.log(username);
+        console.log(password);
         User.find({}).exec(function(err, user) {
             if (err) {
                 res.send(500, { error: "Database Error" });

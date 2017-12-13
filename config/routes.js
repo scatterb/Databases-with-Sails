@@ -36,8 +36,18 @@ module.exports.routes = {
         view: 'homepage',
         'post /User': 'UserController.create'
     },
-    'get /login': 'LoginController.login',
-    'post /login': 'LoginController.CheckDbWithUsername',
+    /*Palauttaa View:n */
+    '/login': {
+        controller: 'login',
+        action: 'login'
+    },
+
+
+    /*Endpoint */
+    'post /login': {
+        controller: 'login',
+        action: 'GetUser'
+    },
 
 
     /***************************************************************************
