@@ -6,14 +6,6 @@
  */
 
 module.exports = {
-    listbook:function(req, res){
-        Books.find({}).exec(function(err, books) {
-            if(err) {
-                res.send(500, {error: "Database Error"});
-            }
-            res.view('listbook',  {books:books});
-        });
-    },
 
     books:function(req, res){
         Books.find({}).exec(function(err, books) {
@@ -24,12 +16,34 @@ module.exports = {
         });
     },
 
+    // This was formerly editbook & still also does work as an edit page if admin user (TODO)
+
+    bookpage: function(req, res){
+        Books.findOne({id:req.params.id}).exec(function(err, book){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+
+            res.view('bookpage', {book:book});
+        });
+    },
+
     comics:function(req, res){
         Books.find({}).exec(function(err, comics) {
             if(err) {
                 res.send(500, {error: "Database Error"});
             }
             res.view('comics',  {books:comics});
+        });
+    },
+
+
+    listbook:function(req, res){
+        Books.find({}).exec(function(err, books) {
+            if(err) {
+                res.send(500, {error: "Database Error"});
+            }
+            res.view('listbook',  {books:books});
         });
     },
 
@@ -62,16 +76,6 @@ module.exports = {
         });
 
         return false;
-    },
-    // This was formerly editbook & still also does work as an edit page if admin user (TODO)
-    bookpage: function(req, res){
-        Books.findOne({id:req.params.id}).exec(function(err, book){
-            if(err){
-                res.send(500, {error: 'Database Error'});
-            }
-
-            res.view('bookpage', {book:book});
-        });
     },
 
     update: function(req, res){
