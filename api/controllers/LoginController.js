@@ -18,8 +18,22 @@ module.exports = {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
-            console.log("läpi menee");
+            if (isEmpty(user)) {
+                res.writeHead(400, { 'Content-Type': 'application/text' });
+                res.end('Login Fail');
+            }
+            console.log(user);
             res.view('homepage', { user: user });
         });
     }
+}
+
+function isEmpty(myObject) {
+    for (var key in myObject) {
+        if (myObject.hasOwnProperty(key)) {
+            return false;
+        }
+    }
+
+    return true;
 }
