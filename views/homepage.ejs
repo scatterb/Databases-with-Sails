@@ -2,22 +2,29 @@
 <p class="mb-4">Suomalaisten oma Stephen King-fanisivusto</p>
 
 <h5>Kaikki tässä alla kovakoodattua sheissea, pidetään toistaiseksi:</h5>
-<a href="/articles/list" class="btn btn-light">View Articles</a>
-<a href="/articles/add" class="btn btn-light">Add Article</a>
+<% if (req.session.me) { %>
+    <a href="/articles/list" class="btn btn-light">View Articles</a>
+    <a href="/articles/add" class="btn btn-light">Add Article</a>
+    <a href="/books/listbook" class="btn btn-light">View and edit Books</a>
+    <a href="/books/addbook" class="btn btn-light">Add Books</a>
+    <% } else { %>
+        <p>Et ole kirjautunut sisään</p>
+        <% } %>
 
-<a href="/books/listbook" class="btn btn-light">View and edit Books</a>
-<a href="/books/addbook" class="btn btn-light">Add Books</a>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Piina.Net</title>
-  </head>
-  <body>
-        <div>
-  <% include kuvakaruselli %>
-        </div>
-  </body>
-</html>
+            <!DOCTYPE html>
+            <html>
+
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                <title>Piina.Net</title>
+            </head>
+
+            <body>
+                <div>
+                    <% include kuvakaruselli %>
+                </div>
+            </body>
+
+            </html>
