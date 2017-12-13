@@ -4,6 +4,7 @@
  * @description :: Server-side logic showing login page
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+'use strict';
 
 module.exports = {
     login: function(req, res) {
