@@ -6,56 +6,56 @@
  */
 
 module.exports = {
-    listbook:function(req, res){
+    listbook: function(req, res) {
         Books.find({}).exec(function(err, books) {
-            if(err) {
-                res.send(500, {error: "Database Error"});
+            if (err) {
+                res.send(500, { error: "Database Error" });
             }
-            res.view('listbook',  {books:books});
+            res.view('listbook', { books: books });
         });
     },
 
-    books:function(req, res){
+    books: function(req, res) {
         Books.find({}).exec(function(err, books) {
-            if(err) {
-                res.send(500, {error: "Database Error"});
+            if (err) {
+                res.send(500, { error: "Database Error" });
             }
-            res.view('books',  {books:books});
+            res.view('books', { books: books });
         });
     },
 
-    comics:function(req, res){
+    comics: function(req, res) {
         Books.find({}).exec(function(err, comics) {
-            if(err) {
-                res.send(500, {error: "Database Error"});
+            if (err) {
+                res.send(500, { error: "Database Error" });
             }
-            res.view('comics',  {books:comics});
+            res.view('comics', { books: comics });
         });
     },
 
-    addbook: function(req, res){
+    addbook: function(req, res) {
         res.view('addbook');
     },
 
-    create:function(req, res){
+    create: function(req, res) {
         var title = req.body.title;
         var synopsis = req.body.synopsis;
         var year = req.body.year;
         var category = req.body.category;
 
-        Books.create({title:title, synopsis:synopsis, year:year, category:category}).exec(function(err){
-            if(err) {
-                res.send(500, {error: 'Database Error'});
+        Books.create({ title: title, synopsis: synopsis, year: year, category: category }).exec(function(err) {
+            if (err) {
+                res.send(500, { error: 'Database Error' });
             }
 
             res.redirect('/books/listbook');
         });
     },
 
-    delete: function(req, res){
-        Books.destroy({id:req.params.id}).exec(function(err){
-            if(err){
-                res.send(500, {error: 'Database Error'});
+    delete: function(req, res) {
+        Books.destroy({ id: req.params.id }).exec(function(err) {
+            if (err) {
+                res.send(500, { error: 'Database Error' });
             }
 
             res.redirect('/books/listbook');
@@ -64,25 +64,25 @@ module.exports = {
         return false;
     },
     // This was formerly editbook & still also does work as an edit page if admin user (TODO)
-    bookpage: function(req, res){
-        Books.findOne({id:req.params.id}).exec(function(err, book){
-            if(err){
-                res.send(500, {error: 'Database Error'});
+    bookpage: function(req, res) {
+        Books.findOne({ id: req.params.id }).exec(function(err, book) {
+            if (err) {
+                res.send(500, { error: 'Database Error' });
             }
 
-            res.view('bookpage', {book:book});
+            res.view('bookpage', { book: book });
         });
     },
 
-    update: function(req, res){
+    update: function(req, res) {
         var title = req.body.title;
         var synopsis = req.body.synopsis;
         var year = req.body.year;
         var category = req.body.category;
 
-        Books.update({id: req.params.id},{title:title, synopsis:synopsis, year:year, category:category}).exec(function(err){
-            if(err){
-                res.send(500, {error: 'Database Error'});
+        Books.update({ id: req.params.id }, { title: title, synopsis: synopsis, year: year, category: category }).exec(function(err) {
+            if (err) {
+                res.send(500, { error: 'Database Error' });
             }
 
             res.redirect('/books/listbook');
@@ -91,4 +91,3 @@ module.exports = {
         return false;
     }
 };
-
