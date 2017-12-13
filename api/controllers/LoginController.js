@@ -10,16 +10,15 @@ module.exports = {
         res.view('login');
     },
 
-    GetUser: function(req, res) {
+    getUser: function(req, res) {
         var username = req.body.username;
         var password = req.body.password;
 
-        console.log(username);
-        console.log(password);
-        User.find({}).exec(function(err, user) {
+        User.find({ username: username, password: password }).exec(function(err, user) {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
+            console.log("läpi menee");
             res.view('homepage', { user: user });
         });
     }

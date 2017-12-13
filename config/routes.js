@@ -37,17 +37,11 @@ module.exports.routes = {
         'post /User': 'UserController.create'
     },
     /*Palauttaa View:n */
-    '/login': {
-        controller: 'login',
-        action: 'login'
-    },
+    'get /login': { view: 'login' },
 
 
     /*Endpoint */
-    'post /login': {
-        controller: 'login',
-        action: 'GetUser'
-    },
+    'post /login': 'LoginController.getUser',
 
 
     /***************************************************************************
