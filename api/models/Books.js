@@ -14,6 +14,9 @@ module.exports = {
     synopsis:{
       type: 'string'
     },
+    year: {
+      type: 'int'
+    },
     category:{
       type:   'string'
     },
