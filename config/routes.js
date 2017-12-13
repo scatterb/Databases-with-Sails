@@ -42,6 +42,7 @@ module.exports.routes = {
 
     /*Endpoint */
     'post /login': 'LoginController.getUser',
+    'get /logout': 'LoginController.logOut',
 
 
     /***************************************************************************
