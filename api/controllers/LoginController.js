@@ -10,12 +10,30 @@ module.exports = {
         res.view('login');
     },
 
-    CheckDbWithUsername: function(req, res) {
-        User.find({}).exec(function(err, user) {
+    getUser: function(req, res) {
+        var username = req.body.username;
+        var password = req.body.password;
+
+        User.find({ username: username, password: password }).exec(function(err, user) {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
+            if (isEmpty(user)) {
+                res.writeHead(400, { 'Content-Type': 'application/text' });
+                res.end('Login Fail');
+            }
+            console.log(user);
             res.view('homepage', { user: user });
         });
     }
+}
+
+function isEmpty(myObject) {
+    for (var key in myObject) {
+        if (myObject.hasOwnProperty(key)) {
+            return false;
+        }
+    }
+
+    return true;
 }
