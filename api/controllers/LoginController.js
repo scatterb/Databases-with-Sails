@@ -23,7 +23,10 @@ module.exports = {
                 res.end('Login Fail');
             }
             console.log(user);
+            req.session.me = user;
+            console.log(req.session.me);
             res.view('homepage', { user: user });
+
         });
     }
 }
