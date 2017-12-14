@@ -1,0 +1,93 @@
+/**
+ * ArticlesController
+ *
+ * @description :: Server-side logic showing login page
+ * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+ */
+
+ 
+module.exports = {
+    login: function(req, res) {
+        res.view('login');
+    },
+
+    getUser: function(req, res) {
+    
+        var username = req.body.username;
+        var password = req.body.password;
+        
+        
+        
+     User.find({ username: username, password: password }).exec(function(err, user) {
+            if (err) {
+                res.send(500, { error: "Database Error" });
+            }
+            if ( (err) || (!user)) {
+                return res.send({
+                message: 'login failed'
+                       });
+                       res.send(err);
+                    }
+                    req.logIn(user, function(err){
+                            if(err) res.send(err);
+                            return res.send({
+                                message: 'login succesful'
+                            });
+                        });
+                    }) (req, res);
+                    },
+
+    logout: function(req, res) {
+        req.logOut();
+        return res.redirect('/');
+    }
+}};
+
+function isEmpty(myObject) {
+    for (var key in myObject) {
+        if (myObject.hasOwnProperty(key)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '/': {
+        view: 'homepage',
+        },
+    
+      'GET /login': {
+          controller: 'LoginController',
+          action: 'login'
+      },
+      'POST /login': {
+          controller: 'LoginController',
+          action: 'getUser'
+      },
+      'GET /logout': {
+          controller: 'LoginController',
+          action: 'logout'
+      }
+     
