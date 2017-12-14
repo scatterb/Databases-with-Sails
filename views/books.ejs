@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th>Nimi</th>
-            <th>Julkaisuvuosi</th>
+            <th>Suomennos</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +11,7 @@
             <% if (book.category != "Comic") { %>
                 <tr>
                     <td><a href="/books/bookpage/<%- book.id %>"<%- book.title %></a></td>
+                    <td><%- book.year %></td>
                     <!-- TODO! Include this when admin user logged in:
                     <td>
                         <form class="d-inline" action="/books/delete/<%- book.id %>" method="post">
