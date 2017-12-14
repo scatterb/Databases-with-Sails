@@ -20,7 +20,7 @@ module.exports = {
             }
             if (isEmpty(user)) {
                 req.session.me = null;
-                // return res.view('login');
+                return res.view('login');
             }
             req.session.me = user;
             res.redirect('/');
