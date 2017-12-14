@@ -14,15 +14,13 @@ module.exports = {
     getUser: function(req, res) {
         var username = req.body.username;
         var password = req.body.password;
-        var dialog = require('dialog')
         User.find({ username: username, password: password }).exec(function(err, user) {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
             if (isEmpty(user)) {
                 req.session.me = null;
-                dialog.info('Incorrect username or password.')
-                return res.view('login');
+                // return res.view('login');
             }
             req.session.me = user;
             res.redirect('/');
