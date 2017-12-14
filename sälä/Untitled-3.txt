@@ -4,7 +4,6 @@
  * @description :: Server-side logic showing login page
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-'use strict';
 
 module.exports = {
     login: function(req, res) {
@@ -14,17 +13,27 @@ module.exports = {
     getUser: function(req, res) {
         var username = req.body.username;
         var password = req.body.password;
+        var dialog = require('dialog')
         User.find({ username: username, password: password }).exec(function(err, user) {
             if (err) {
                 res.send(500, { error: "Database Error" });
             }
             if (isEmpty(user)) {
                 req.session.me = null;
+                dialog.info('Incorrect username or password.')
                 return res.view('login');
             }
-            req.session.me = user;
-            res.redirect('/');
-
+            
+            if (user){
+                req.session.me = user;
+                res.view('homepage', { user: user });
+                       }
+          else{
+            res.view('login');
+                 }
+            
+            
+          
         });
     },
     logOut: function(req, res) {
