@@ -14,7 +14,7 @@
                 <td><%= article.title %></td>
                 <td><%= article.body %></td>
                 <td>
-                    <a href="/articles/edit/<%= article.id %>" class="btn btn-primary">Edit</a>
+                    <a href="/articles/articlepage/<%= article.id %>" class="btn btn-primary">Edit</a>
                     <form class="d-inline" action="/articles/delete/<%= article.id %>" method="post">
                         <input type="Submit" value="Delete" class="btn btn-danger">
                     </form>

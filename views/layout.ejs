@@ -16,6 +16,7 @@
     -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
+
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/importer.css">
@@ -36,37 +37,49 @@
             <% } else { %>
                 <a class="navbar-brand" href="/login">Login</a>
                 <% } %>
-                    <ul class="nav navbar-nav">
-                        <li class="active"></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stephen King</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/articles/articlepage/5a25209f0973a693cc932cd7">Biografia</a></li>
-                                <li><a href="/articles/articlepage/5a258bd8ae6d963bdbb93423">Richard Bachman</a></li>
-                                <li><a href="http://stephenking.com/" target="Official Website">StephenKing.com</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kirjat</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/books/books">Bibliografia</a></li>
-                                <li><a href="/books/comics">Sarjakuvat</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Filmografia</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/articles/articlepage/5a2ec8c31fa4149a9b052bf1">Elokuvat</a></li>
-                                <li><a href="/articles/articlepage/5a2ee7d31d124563a23b873a">TV-Sarjat</a></li>
-                                <li><a href="#">Cameoroolit</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+        <ul class="nav navbar-nav">
+            <li class="active"></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stephen King</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/articles/articlepage/5a25209f0973a693cc932cd7">Biografia</a></li>
+                    <li><a href="/articles/articlepage/5a258bd8ae6d963bdbb93423">Richard Bachman</a></li>
+                    <li><a href="http://stephenking.com/" target="Official Website">StephenKing.com</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kirjat</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/books/books">Bibliografia</a></li>
+                    <li><a href="/books/comics">Sarjakuvat</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Filmografia</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/articles/articlepage/5a2ec8c31fa4149a9b052bf1">Elokuvat</a></li>
+                    <li><a href="/articles/articlepage/5a2ee7d31d124563a23b873a">TV-Sarjat</a></li>
+                    <li><a href="/articles/articlepage/5a3157811794c40fbf38a37d">Cameoroolit</a></li>
+                </ul>
+            </li>
+        </ul>
+
     </nav>
 
     <div class="container">
         <%- body %>
     </div>
+	
+	<footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+					<br>
+                    <p>Piina © - 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!--
         Client-side Templates

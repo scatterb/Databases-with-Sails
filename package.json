@@ -9,8 +9,12 @@
     "dialog": "^0.3.1",
     "dialogs": "^1.1.20",
     "dotenv": "^4.0.0",
+<<<<<<< HEAD
     "ejs": "2.3.4",
     "express": "^4.16.2",
+=======
+    "ejs": "2.5.5",
+>>>>>>> b86089e9ecdcf1f1102329e566a6fb3608ee7f3a
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-coffee": "1.0.0",
