@@ -95,3 +95,82 @@
   .dialog-widget .ok {
     margin-left: 5px;
   }
+
+/* Article styling */
+
+.wp-caption-text {
+  /* padding-top: 5px; */
+
+}
+
+.size-medium {
+  margin-top: 5px;
+}
+
+h1, h2, h3 {
+    font-family: 'Bree Serif', serif;
+    font-size: 36px;
+    color: #337ab7;
+}
+
+h4, h5 {
+  font-family: 'Bree Serif', serif;
+  font-size: 28px;
+  color: #337ab7;
+}
+
+p {
+  font-family: 'Quattrocento', serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+a {
+  color: #337ab7;
+}
+
+/* Navbar */
+nav {
+  font-family: 'Bree Serif', serif;
+}
+
+nav a {
+  font-size: 16px;
+  color: #337ab7;
+}
+
+.bg-color {
+  background-color: #1D1A1A;
+}
+
+
+/* Footer */
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 10rem;
+  min-height: 100%;
+}
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  background-color: #efefef;
+  font-size: 20px;
+  text-align: center;
+}
